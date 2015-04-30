@@ -50,11 +50,22 @@ $c_p = str_replace("/","",$_SERVER["PHP_SELF"]);//current page
 
 <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="background-color:transparent">
 		<div class="container-fluid">
+			<div class="container-fluid">
+			<div class="panel panel-success">
+			<div class="panel-body">
+			<div class="col-xs-2">
+				<img class="img-responsive" src="/images/iit_ropar_correct_trans.png" style="width:120px;height:auto;">
+			</div>
+			<div class="col-xs-10"><h1 class="infoself">Indian Institute of Technology, Ropar</h1>
+			<h3 class="infoself hidden-xs">Training & Placement portal</h3></div>
+			</div>
+			</div>
+			</div>
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" id="toggled" data-toggle="collapse" data-target="#myNavbar">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
+					<span class="icon-bar"></span
 					<span class="icon-bar"></span>
 				</button>
 			<div class="navbar-brand">R&D Hub</div>

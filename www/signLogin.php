@@ -46,40 +46,70 @@ if(isset($_REQUEST['page']) && !empty($_REQUEST['page']))
 			      <div class="hidden-xs">&nbsp;</div>
 			    </div>
 			    <div class="item">
-			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><h2 style="color:red"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></h2></button>
-			      <?php
+			    <?php 
+			    if($curr_page!="activity.php" && $curr_page!="home.php")
+			    {
+			    	echo '<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><h2 style="color:red"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></h2></button>';
+			    }
+			    ?>
+			    <?php
 				include './handshake/loginOptions.php';
 				?>
 			    </div>
 			    <div class="item">
-			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><h2 style="color:red"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></h2></button>
+			   <?php 
+			    if($curr_page!="activity.php" && $curr_page!="home.php")
+			    {
+			    	echo '<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><h2 style="color:red"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></h2></button>';
+			    }
+			    ?>
 			      <?php
 				include './handshake/signupOptions.php';
 				?>
 			    </div>
 			    <div class="item">
-			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><h2 style="color:red"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></h2></button>
+			   <?php 
+			    if($curr_page!="activity.php" && $curr_page!="home.php")
+			    {
+			    	echo '<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><h2 style="color:red"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></h2></button>';
+			    }
+			    ?>
 			      <?php
 				include './handshake/signupform.php';
 				?>
 			    </div>
 
 			    <div class="item <?php echo ($activePage=='lfs')?' active':''; ?>">
-			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><h2 style="color:red"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></h2></button>
+			   <?php 
+			    if($curr_page!="activity.php" && $curr_page!="home.php")
+			    {
+			    	echo '<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><h2 style="color:red"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></h2></button>';
+			    }
+			    ?>
 			      <?php
 				include './handshake/loginform.php';
 				?>
 			    </div>
 
 			    <div class="item  <?php echo ($activePage=='sfc')?' active':''; ?>">
-			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><h2 style="color:red"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></h2></button>
+			   <?php 
+			    if($curr_page!="activity.php" && $curr_page!="home.php")
+			    {
+			    	echo '<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><h2 style="color:red"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></h2></button>';
+			    }
+			    ?>
 			      <?php
 				include './handshake/signupformcompany.php';
 				?>
 			    </div>
 
 			    <div class="item  <?php echo ($activePage=='lfc')?' active':''; ?>">
-			    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><h2 style="color:red"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></h2></button>
+			   <?php 
+			    if($curr_page!="activity.php" && $curr_page!="home.php")
+			    {
+			    	echo '<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><h2 style="color:red"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></h2></button>';
+			    }
+			    ?>
 			      <?php
 				include './handshake/loginformcompany.php';
 				?>

@@ -19,7 +19,7 @@
 	}*/
 	</style>
 </head>
-<body background="/images/green-bg_001.jpg">
+<body background="/images/green-bg_001.jpg" onload="loadProjects()">
 	<?php
 	$page = 'projAvail.inc.php';
 	include 'setPageFormat.inc.php'; 
