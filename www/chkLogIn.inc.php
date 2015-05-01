@@ -125,7 +125,6 @@ function _setProjectField($field,$value,$field2,$connect)
 	$field2 = mysqli_real_escape_string($connect,$field2);
 	global $table_name_project;
 	$myquery=sprintf("UPDATE %s SET %s='%s' WHERE company_email_id='%s' AND project_name='%s'",$table_name_project,$field,$value,$_SESSION['company_id'],$field2);
-	echo $myquery;
 	if($resQuery=mysqli_query($connect,$myquery))
 	{
 		return true;

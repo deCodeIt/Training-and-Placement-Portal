@@ -10,12 +10,36 @@
 		include './welMsg.inc.php';
 	}
 ?>
-<div class="container-fluid">
+<?
+require_once './connect.inc.php';
+require_once './chkLogIn.inc.php';
+$vals=array();
+$flag=0;
+	$ct=0;
+	$myquery=sprintf("SELECT  projects.project_name, companyinfo.company_name FROM companyinfo,projects WHERE companyinfo.company_email_id=projects.company_email_id ORDER BY projects.sub_date DESC LIMIT 0,5");
+	if($resQuery=mysqli_query($connect,$myquery))
+	{
+		if($myValue = mysqli_fetch_assoc($resQuery))
+		{
+			$flag=1;
+			$vals[$ct++] = $myValue;
+			while ( $myValue = mysqli_fetch_assoc($resQuery) ) {
+				$vals[$ct++] = $myValue;
+			}
+		}
+	}
+?>
+<div class="col-xs-12">
 <div class="panel panel-success"> 
-	<div class="panel-heading"><h4>Latest Updates</h4></div>
+	<div class="panel-heading"><h4>Latest Projects</h4></div>
 	<div class="panel-body" style="background-color:transparent;">
-	 	<p class="text-info">Yet to be Modified</p>
-	 	<p class="text-info">THIS is some Random text.<br>THIS is some Random text.<br>THIS is some Random text.<br>THIS is some Random text.<br></p>
+	 	<p class="text-info">
+	 	<?php
+	 	for ($i=0; $i < count($vals); $i++) { 
+	 		echo "Project:\"".$vals[$i]['project_name']."\" by - \"".$vals[$i]['company_name']."\"<br>";
+	 	}
+	 	?>
+	 	</p>
 	</div>
 </div>
 </div>
