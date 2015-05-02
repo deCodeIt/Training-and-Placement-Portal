@@ -16,7 +16,7 @@ require_once './chkLogIn.inc.php';
 $vals=array();
 $flag=0;
 	$ct=0;
-	$myquery=sprintf("SELECT  projects.project_name, companyinfo.company_name FROM companyinfo,projects WHERE companyinfo.company_email_id=projects.company_email_id ORDER BY projects.sub_date DESC LIMIT 0,5");
+	$myquery=sprintf("SELECT  %s.project_name, %s.company_name FROM %s,%s WHERE %s.company_email_id=%s.company_email_id ORDER BY %s.sub_date DESC LIMIT 0,5",$table_name_project,$table_name_company,$table_name_company,$table_name_project,$table_name_company,$table_name_project,$table_name_project);
 	if($resQuery=mysqli_query($connect,$myquery))
 	{
 		if($myValue = mysqli_fetch_assoc($resQuery))
@@ -30,13 +30,13 @@ $flag=0;
 	}
 ?>
 <div class="col-xs-12">
-<div class="panel panel-success"> 
+<div class="panel panel-warning"> 
 	<div class="panel-heading"><h4>Latest Projects</h4></div>
 	<div class="panel-body" style="background-color:transparent;">
-	 	<p class="text-info">
+	 	<p class="text-primary">
 	 	<?php
 	 	for ($i=0; $i < count($vals); $i++) { 
-	 		echo "Project:\"".$vals[$i]['project_name']."\" by - \"".$vals[$i]['company_name']."\"<br>";
+	 		echo ($i+1).". Project:\"".$vals[$i]['project_name']."\" by - \"".$vals[$i]['company_name']."\"<br>";
 	 	}
 	 	?>
 	 	</p>
