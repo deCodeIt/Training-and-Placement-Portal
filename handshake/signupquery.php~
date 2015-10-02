@@ -1,0 +1,34 @@
+<?php
+$servername = "localhost";//name of the server
+$rootusername = "csp203";
+$password = "iitropar@786";//password of the root user
+$database_name = "hub_csp";
+$table_name_for_students_info = "studentinfo";
+// Create connection
+$connect = mysqli_connect($servername,$rootusername,$password,$database_name);
+
+if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL :(";// . mysqli_connect_error();
+  }
+?>
+<?php 
+	$emailadd =  mysqli_real_escape_string($connect,$_POST['email_id']);
+	$username =  mysqli_real_escape_string($connect,$_POST['username']);
+	$entry_no =  mysqli_real_escape_string($connect,$_POST['entry_number']);
+	$passwd =  mysqli_real_escape_string($connect,$_POST['password']);
+	//enter the field of the table in studentinfo
+	$enquire = "INSERT INTO $table_name_for_students_info (email_id,username,entry_number,password) VALUES ('$emailadd','$username','$entry_no','$passwd')";
+	$query = mysqli_query($connect,$enquire);
+	//INSERT INTO table_name (column1,column2,column3,...)
+	//VALUES (value1,value2,value3,...);
+	
+	if(!$query){
+		echo "UNSuccessful SIGN UP ,please signup again <br>";
+		echo "<a href = 'signupform.php'>SIGN_UP</a>";
+	}
+	else{
+		echo "HELLO $username!";
+		//code that sends the mail to the user giving its field
+	}
+?>
