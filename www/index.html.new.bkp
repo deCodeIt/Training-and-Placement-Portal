@@ -1,0 +1,78 @@
+<html>
+<head>
+	<title>Student Details</title>
+	<style type="text/css">
+	#drpdwn{
+		width:200px;
+		text-align: center;
+	}
+	/*#drpdwn option{
+		width: 100px;
+	}*/
+	</style>
+</head>
+<body background="images/Black-woven-seamless-background-tile.jpg">
+	<div style="margin-top:0px;margin-left:0px;width:100%;height:100%">
+		<div style="padding: 50px 10px;margin:0 auto;width:30%;background-image: url('images/6783-subtle-light-tile-pattern-vol1-graphic-web-backgrounds-pixeden.jpg')">
+			<table style="width:100%" border="0">
+				<form name="frm" id="frm" method="POST">
+					<tr>
+						<th colspan="2" style="text-align:center">
+							<h2><font color="Black">Information</font></h2>
+						</th>
+					</tr>
+					<tr>
+						<td>
+							<font color="red">Name : </font>
+						</td>
+						<td>
+							<p><input type="text" id="nm" name="nm" size="20"></p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font color="blue">Gender : </font>
+						</td>
+						<td>
+							<p>
+							<select name="gen" size="1" id="drpdwn">
+								<option value="male">MALE</option>
+								<option value="female">FEMALE</option>
+							</select>
+							</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font color="blue">Entry Number : </font>
+						</td>
+						<td>
+							<p><input type="text" id="en" name="en"></p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<font color="black">Branch : </font>
+						</td>
+						<td>
+							<p>
+								<select name="branch" id="drpdwn">
+									<option value="cse">CSE</option>
+									<option value="ee">EE</option>
+									<option value="me">ME</option>
+								</select>
+							</p>
+						</td>
+					</tr>
+					<tr style="height:20px;"></tr>
+					<tr>
+						<td colspan="2" style="text-align:center">
+							<p><input type="submit" value="SUBMIT!!!" style="width:150px;padding:5px 10px;background-color:#51A7FF"></p>
+						</td>
+					</tr>
+				</form>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
